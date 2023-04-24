@@ -19,9 +19,6 @@ namespace API.Entities
         public string Descriere { get; set; }
 
         public int idStatus { get; set; }
-
-        public int MyProperty { get; set; }
-
         public int idLucratorAsignat { get; set; }
 
         public int idServiciuAsignat { get; set; }

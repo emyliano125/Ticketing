@@ -24,6 +24,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                    
                 },
                  new Ticket    
                 {
@@ -39,6 +40,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                   
                 },
                  new Ticket    
                  {
@@ -54,6 +56,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                    
                 },
                  new Ticket    
                  {
@@ -69,6 +72,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                    
                 },
                  new Ticket    
                  {
@@ -84,6 +88,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                
                 },
                  new Ticket    
                  {
@@ -99,6 +104,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                    
                 },
                  new Ticket    
                  {
@@ -114,6 +120,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                    
                 },
                  new Ticket    
                  {
@@ -129,6 +136,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                    
                 },
                  new Ticket    
                  {
@@ -144,6 +152,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                   
                 },
                  new Ticket    
                  {
@@ -159,6 +168,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+          
                 },
                  new Ticket    
                  {
@@ -174,6 +184,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                  
                 },
                  new Ticket    
                  {
@@ -189,6 +200,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                   
                 },
                  new Ticket    
                  {
@@ -204,6 +216,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                    
                 },
                  new Ticket    
                  {
@@ -219,6 +232,7 @@ namespace API.Data
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,
                     Valid = true,
+                   
                 },      
             };
 
