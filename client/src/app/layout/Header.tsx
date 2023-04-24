@@ -1,25 +1,77 @@
-import { AppBar, Card, Toolbar, Typography } from "@mui/material";
-import CustomSwitch from "./Switch";
+import { Notifications } from "@mui/icons-material";
+import { AppBar, Badge, Box, Card, IconButton, List, ListItem, Toolbar, Typography } from "@mui/material";
+import { wrap } from "module";
+import { Link, NavLink } from "react-router-dom";
 
+const midLinks = [
+    { title: 'Solicitari AD', path: '/solicitariAD' },
+    { title: 'Tickete', path: '/vizualizareTicketePrimite' },
+    { title: 'Ticketele Mele', path: '/ticketeleMele' },
+    { title: 'Administrare', path: '/administrare' },
+]
 
-
+const navStyles = {
+    color: 'inherit',
+    typography: 'h6',
+    mr: 8,
+    whiteSpace: 'nowrap',
+    '&:hover': {
+        color: 'grey.500'
+    },
+    '&.active': {
+        color: 'text.secondary'
+    }
+}
 
 export default function Header() {
     return (
-     
-     
-            <AppBar position='static' sx={{ mb: 4 }}>
-                <Toolbar>
-                    <Typography variant='h6'>
-                        <img style={{ maxWidth: "3%" }}
+
+
+        <AppBar position='static' sx={{ mb: 4 }}>
+            <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+
+                <Box sx={{ mr: -400 }}>
+
+                    <Typography component={NavLink} to={"/"} variant='h6'>
+                        <img style={{ maxWidth: "3%", }}
                             src={require('./logo.png')}
                             alt="Logo" />
                     </Typography>
 
-                </Toolbar>
-            </AppBar>
-          
-       
-       
+                </Box>
+
+
+
+                <Box>
+                    <List sx={{ display: 'flex', justifyContent: 'space-around' }}>
+                        {midLinks.map(({ title, path }) => (
+                            <ListItem
+                                component={NavLink}
+                                to={path}
+                                key={path}
+                                sx={navStyles}
+                            >
+                                {title.toUpperCase()}
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
+
+                <Box display='flex' alignItems='center'>
+
+                    <List sx={{ display: 'flex' }}>
+                        <IconButton size='large' edge='start' color='inherit' sx={{ mr: 2 }}>
+                            <Badge badgeContent='4' color='secondary'>
+                                <Notifications />
+                            </Badge>
+
+                        </IconButton>
+                    </List>
+                </Box>
+            </Toolbar>
+        </AppBar>
+
+
+
     )
 }

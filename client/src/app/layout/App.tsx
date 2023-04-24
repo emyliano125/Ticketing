@@ -3,6 +3,7 @@ import { Container, CssBaseline, ThemeProvider, Typography, createTheme } from "
 import Header from "./Header";
 import { useState } from "react";
 import CustomSwitch from "./Switch";
+import { Outlet } from "react-router-dom";
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       <CssBaseline />
       <Header />
       <Container>
-        <VizualizareTicketePrimite />
+        <Outlet />
       </Container>
       <Typography sx={{position:"absolute", bottom:5, right:5,zIndex:30000}}>
         <CustomSwitch darkMode={darkMode} handleThemeChange={handleThemeChange} />
