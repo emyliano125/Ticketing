@@ -19,7 +19,7 @@ namespace API.Data
                     tlfnInteriorSolicitant = "010101",
                     tlfMobilSolicitant = "1111111111",
                     dataDeschidereTicket = DateTime.Now,
-                    Descriere = "Probleme logare",
+                    Descriere = "Notă: Funcția TEXT va face conversia numerelor la text, fapt care poate îngreuna referirea la ele în calcule ulterioare. Se recomandă să păstrați valoarea inițială într-o singură celulă, apoi să utilizați funcția TEXT în altă celulă. Apoi, dacă trebuie să construiți alte formule, faceți întotdeauna referire la valoarea inițială și nu la rezultatul funcției TEXT.",
                     idStatus = 1,
                     idLucratorAsignat = 0,
                     idServiciuAsignat = 0,

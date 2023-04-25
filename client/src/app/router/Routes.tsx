@@ -17,7 +17,8 @@ export const router = createBrowserRouter([
             { path: 'solicitariAD', element: <SolicitariAdPage /> },
             { path: 'ticketeleMele', element: <TicketeleMelePage /> },
             { path: 'vizualizareTicketePrimite', element: <VizualizareTicketePrimite /> },
-            { path: 'vizualizareTicketePrimite/id', element: <TicketDetails /> },
+            { path: 'vizualizareTicketePrimite/:id', element: <TicketDetails /> },
+            
         ]
 
     }

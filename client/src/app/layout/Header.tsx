@@ -30,19 +30,20 @@ export default function Header() {
         <AppBar position='static' sx={{ mb: 4 }}>
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
-                <Box sx={{ mr: -400 }}>
+                <Box display='flex' alignItems='center'>
 
-                    <Typography component={NavLink} to={"/"} variant='h6'>
-                        <img style={{ maxWidth: "3%", }}
+                    <Typography variant='h6' component={NavLink}
+                        to='/'
+                        sx={navStyles}>
+                        {/* <img style={{ maxWidth: "3%", }}
                             src={require('./logo.png')}
-                            alt="Logo" />
+                            alt="Logo" /> */}
+
+                            IGPR-DCTI
                     </Typography>
 
                 </Box>
-
-
-
-                <Box>
+                <Box >
                     <List sx={{ display: 'flex', justifyContent: 'space-around' }}>
                         {midLinks.map(({ title, path }) => (
                             <ListItem

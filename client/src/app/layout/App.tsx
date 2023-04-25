@@ -29,9 +29,9 @@ function App() {
       <Container>
         <Outlet />
       </Container>
-      <Typography sx={{position:"absolute", bottom:5, right:5,zIndex:30000}}>
+      {/* <Typography sx={{position:"absolute", bottom:5, right:5,zIndex:30000}}>
         <CustomSwitch darkMode={darkMode} handleThemeChange={handleThemeChange} />
-      </Typography>
+      </Typography> */}
     </ThemeProvider>
   );
 }
