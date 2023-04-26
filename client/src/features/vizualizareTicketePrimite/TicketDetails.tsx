@@ -6,6 +6,9 @@ import { Ticket } from "../../app/models/ticket";
 
 import moment from "moment";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import agent from "../../app/api/agent";
+import NotFound from "../errors/NotFound";
+import LoadingComponent from "../../app/layout/LoadingComponent";
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -17,26 +20,21 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 
-
-
-
-
-
-
 export default function TicketDetails() {
     const { id } = useParams<{ id: string }>();
     const [ticket, setTicket] = useState<Ticket | null>(null);
     const [loading, setLoading] = useState(true);
+
     useEffect(() => {
-        axios.get(`http://localhost:5001/api/tickets/${id}`)
-            .then(response => setTicket(response.data))
+    id && agent.Ticket.details(parseInt(id))
+            .then(response => setTicket(response))
             .catch(error => console.log(error))
             .finally(() => setLoading(false));
     }, [id])
 
-    if (loading) return <h3>Loading...</h3>
+    if (loading) return <LoadingComponent message="Incarcare ticket..."/>
 
-    if (!ticket) return <h3>Ticketul nu a fost gasit</h3>
+    if (!ticket) return <NotFound/>
 
     return (
         

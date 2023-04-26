@@ -1,6 +1,5 @@
 import { Notifications } from "@mui/icons-material";
 import { AppBar, Badge, Box, Card, IconButton, List, ListItem, Toolbar, Typography } from "@mui/material";
-import { wrap } from "module";
 import { Link, NavLink } from "react-router-dom";
 
 const midLinks = [
@@ -8,7 +7,10 @@ const midLinks = [
     { title: 'Tickete', path: '/vizualizareTicketePrimite' },
     { title: 'Ticketele Mele', path: '/ticketeleMele' },
     { title: 'Administrare', path: '/administrare' },
+    { title: 'Pagina Erori', path: '/errors' },
+
 ]
+
 
 const navStyles = {
     color: 'inherit',
@@ -39,7 +41,7 @@ export default function Header() {
                             src={require('./logo.png')}
                             alt="Logo" /> */}
 
-                            IGPR-DCTI
+                        IGPR-DCTI
                     </Typography>
 
                 </Box>

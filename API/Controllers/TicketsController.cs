@@ -5,9 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class TicketsController : ControllerBase
+  
+    public class TicketsController : BaseApiController
     {
         private readonly StoreContext _context;
         public TicketsController(StoreContext context)
@@ -28,7 +27,10 @@ namespace API.Controllers
 
         public async Task<ActionResult<Ticket>> GetTicket(int id)
         {
-            return await _context.Tickets.FindAsync(id);
+            var ticket = await _context.Tickets.FindAsync(id);
+            if(ticket == null) return NotFound();
+            return ticket;
+
         }
 
     }
