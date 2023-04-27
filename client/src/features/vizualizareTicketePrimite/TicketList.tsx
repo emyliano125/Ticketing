@@ -1,12 +1,14 @@
 import { Delete } from "@mui/icons-material";
-import { Button, Card, CardContent, Grid, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Button, Card, CardContent, Grid, Icon, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import moment from "moment";
 import { Ticket } from "../../app/models/ticket";
 import InfoIcon from '@mui/icons-material/Info';
 import { blue } from "@mui/material/colors";
 import { Link } from "react-router-dom";
-
-
+import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
+import CheckIcon from '@mui/icons-material/Check';
+import BlockIcon from '@mui/icons-material/Block';
+import BookIcon from '@mui/icons-material/Book';
 
 interface Props {
     tickets: Ticket[];
@@ -36,7 +38,7 @@ export default function TicketList({ tickets }: Props) {
                     </TableHead>
                     <TableBody>
                         {tickets.map(ticket => (
-                            <TableRow 
+                            <TableRow
                                 key={ticket.id} sx={{
                                     '&:last-child td, &:last-child th': { border: 0 },
                                     "&:hover": {
@@ -47,7 +49,21 @@ export default function TicketList({ tickets }: Props) {
                                 <TableCell align="center">{ticket.solicitare.denumire} </TableCell>
                                 <TableCell align="center">{ticket.emailSolicitant}</TableCell>
                                 <TableCell align="center">{moment(ticket.dataDeschidereTicket).format('LL')}</TableCell>
-                                <TableCell align="center"><Button variant="outlined" color={ticket.statusId===2 ? "warning" : ticket.statusId===3 ? "success" : ticket.statusId===4 ? "error" :"info"} sx={{ minWidth: 130 }}>{ticket.status.denumire}</Button></TableCell>
+                                <TableCell align="center">
+                                    <Button variant="outlined"
+                                        color={
+                                            ticket.statusId === 2 ? "warning" :
+                                                ticket.statusId === 3 ? "success" :
+                                                    ticket.statusId === 4 ? "error" :
+                                                        "info"
+                                        }    
+                                        sx={{ minWidth: 130 }}>
+                                            <Icon>{ticket.statusId ===2 ? <AccessTimeFilledIcon sx={{width:"80%",mr:1,mb:1}}/> : 
+                                                    ticket.statusId ===3 ?  <CheckIcon sx={{width:"80%",mr:1,mb:1}}/> :
+                                                    ticket.statusId ===4 ?  <BlockIcon sx={{width:"80%",mr:1,mb:1}}/> : <BookIcon sx={{width:"80%",mr:1,mb:1}}/> }</Icon>
+                                        {ticket.status.denumire}
+                                    </Button>
+                                </TableCell>
                                 <TableCell align="center">
                                     <IconButton aria-label="delete">
                                         <Delete color="error" />

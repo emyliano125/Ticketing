@@ -73,7 +73,7 @@ namespace API.Data
             //     },
             //     new Status
             //     {
-            //         Denumire="In rezolvare",
+            //         Denumire="Rezolvare",
 
 
             //     },
