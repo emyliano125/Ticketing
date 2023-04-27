@@ -10,5 +10,10 @@ namespace API.Data
         }
 
         public DbSet<Ticket> Tickets { get; set; }
+        public DbSet <Serviciu> Servicii { get; set; }
+        public DbSet <Solicitare> Solicitari { get; set; }
+        public DbSet <Status> Statusuri { get; set; }
+        public DbSet <Unitate> Unitati { get; set; }
+
     }
 }

@@ -4,8 +4,27 @@ namespace API.Entities
     {
         public int Id { get; set; }
 
-        public int idTipSolicitare { get; set; }
-        public int idUnitateExpeditoare { get; set; }
+
+        //Solicitare
+        public int SolicitareId { get; set; }
+        public Solicitare Solicitare { get; set; }
+
+
+        //Unitate expeditoare
+        public int UnitateId { get; set; }
+        public Unitate Unitate { get; set; }
+
+
+        //Status
+        public int StatusId { get; set; }
+        public Status Status { get; set; }
+
+
+        //Serviciu Asignat
+        public int ServiciuId { get; set; }
+        public Serviciu Serviciu { get; set; }
+
+
 
         public int idUserExpeditor { get; set; }
 
@@ -18,11 +37,7 @@ namespace API.Entities
         public DateTime dataDeschidereTicket { get; set; } = DateTime.Now;
         public string Descriere { get; set; }
 
-        public int idStatus { get; set; }
         public int idLucratorAsignat { get; set; }
-
-        public int idServiciuAsignat { get; set; }
-
         public bool Valid { get; set; }
     }
 }

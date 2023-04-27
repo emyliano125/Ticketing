@@ -3,6 +3,7 @@ import { Ticket } from "../../app/models/ticket"
 import TicketList from "./TicketList";
 import agent from "../../app/api/agent";
 import LoadingComponent from "../../app/layout/LoadingComponent";
+import { Box, Typography } from "@mui/material";
 
 
 export default function VizualizareTicketePrimite() {
@@ -42,8 +43,23 @@ export default function VizualizareTicketePrimite() {
 
     return (
         <>
-            <h1>Vizualizare tickete</h1>
+         <Box
+                    sx={{
+                        p: 3,
+                        boxShadow:
+                            '0 0 2px 0 rgba(145, 158, 171, 0.2), 0 12px 24px -4px rgba(145, 158, 171, 0.12)',
+                        background: "white",
+                        borderRadius: '16px',
+                        padding: '2rem',
+                        position: 'relative',
+                        
+
+                    }}
+
+                >
+            <Typography variant="h4" sx={{mt:6,mb:5}}>Vizualizare tickete</Typography>
            <TicketList tickets = {tickets} />
+           </Box>
         </>
 
 

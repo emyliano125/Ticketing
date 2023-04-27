@@ -3,6 +3,7 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20230427094450_Nomenclatoare")]
+    partial class Nomenclatoare
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
@@ -94,7 +97,10 @@ namespace API.Data.Migrations
                     b.Property<int>("StatusId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("UnitateId")
+                    b.Property<int?>("UnitaeId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("UnitateExpeditoareId")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("Valid")
@@ -126,7 +132,7 @@ namespace API.Data.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.HasIndex("UnitateId");
+                    b.HasIndex("UnitaeId");
 
                     b.ToTable("Tickets");
                 });
@@ -180,11 +186,9 @@ namespace API.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("API.Entities.Unitate", "Unitate")
+                    b.HasOne("API.Entities.Unitate", "Unitae")
                         .WithMany()
-                        .HasForeignKey("UnitateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UnitaeId");
 
                     b.Navigation("Serviciu");
 
@@ -192,7 +196,7 @@ namespace API.Data.Migrations
 
                     b.Navigation("Status");
 
-                    b.Navigation("Unitate");
+                    b.Navigation("Unitae");
                 });
 #pragma warning restore 612, 618
         }

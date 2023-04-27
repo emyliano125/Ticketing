@@ -105,7 +105,7 @@ export default function TicketDetails() {
                             type='string'
                             label='Unitatea Expeditoare'
                             fullWidth
-                            value={ticket.idUnitateExpeditoare}
+                            value={ticket.unitate.denumire}
                         />
                         <TextField 
                                 disabled={true}
@@ -113,7 +113,7 @@ export default function TicketDetails() {
                                 type='string'
                                 label='Tipul Solicitarii'
                                 fullWidth
-                                value={ticket.idTipSolicitare}
+                                value={ticket.solicitare.denumire}
                             />
 
 
@@ -245,7 +245,7 @@ export default function TicketDetails() {
                                         type='string'
                                         label='Status'
                                         fullWidth
-                                        value={ticket.idStatus}
+                                        value={ticket.status.denumire}
                                     />
                                      <TextField
                                         disabled={true}
@@ -261,7 +261,7 @@ export default function TicketDetails() {
                                         type='string'
                                         label='Serviciu Asignat'
                                         fullWidth
-                                        value={ticket.idServiciuAsignat}
+                                        value={ticket.serviciu.prescurtare}
                                     />
                                 </Stack>
                             </Stack>

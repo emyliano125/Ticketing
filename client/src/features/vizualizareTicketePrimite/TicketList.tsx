@@ -1,5 +1,5 @@
 import { Delete } from "@mui/icons-material";
-import { Card, CardContent, Grid, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Button, Card, CardContent, Grid, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import moment from "moment";
 import { Ticket } from "../../app/models/ticket";
 import InfoIcon from '@mui/icons-material/Info';
@@ -15,8 +15,9 @@ interface Props {
 const headerColor = blue[500];
 
 export default function TicketList({ tickets }: Props) {
+
     return (
-        <Card sx={{ minWidth: 275, marginBottom: "50px" }}>
+        <Card sx={{ minWidth: 275, marginBottom: "50px", mr:5,ml:5 }}>
 
             <TableContainer component={Paper}>
                 <Table>
@@ -34,7 +35,7 @@ export default function TicketList({ tickets }: Props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {tickets.map(ticket => (
+                        {tickets.map(ticket => (          
                             <TableRow
                                 key={ticket.id} sx={{
                                     '&:last-child td, &:last-child th': { border: 0 },
@@ -43,10 +44,10 @@ export default function TicketList({ tickets }: Props) {
                                     }
                                 }}>
                                 <TableCell align="center">{ticket.id} </TableCell>
-                                <TableCell align="center">{ticket.idTipSolicitare} </TableCell>
+                                <TableCell align="center">{ticket.solicitare.denumire} </TableCell>
                                 <TableCell align="center">{ticket.emailSolicitant}</TableCell>
-                                <TableCell align="center">{moment(ticket.dataDeschidereTicket).format('LL')}</TableCell>
-                                <TableCell align="center">{ticket.idStatus}</TableCell>
+                                <TableCell align="center">{moment(ticket.dataDeschidereTicket).format('LL')}</TableCell>                   
+                                <TableCell align="center"><Button variant="outlined"  sx={{minWidth:130}}>{ticket.status.denumire}</Button></TableCell>
                                 <TableCell align="center">
                                     <IconButton aria-label="delete">
                                         <Delete color="error" />
