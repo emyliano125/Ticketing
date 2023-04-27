@@ -17,7 +17,7 @@ const headerColor = blue[500];
 export default function TicketList({ tickets }: Props) {
 
     return (
-        <Card sx={{ minWidth: 275, marginBottom: "50px", mr:5,ml:5 }}>
+        <Card sx={{ minWidth: 275, marginBottom: "50px", mr: 5, ml: 5 }}>
 
             <TableContainer component={Paper}>
                 <Table>
@@ -35,8 +35,8 @@ export default function TicketList({ tickets }: Props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {tickets.map(ticket => (          
-                            <TableRow
+                        {tickets.map(ticket => (
+                            <TableRow 
                                 key={ticket.id} sx={{
                                     '&:last-child td, &:last-child th': { border: 0 },
                                     "&:hover": {
@@ -46,8 +46,8 @@ export default function TicketList({ tickets }: Props) {
                                 <TableCell align="center">{ticket.id} </TableCell>
                                 <TableCell align="center">{ticket.solicitare.denumire} </TableCell>
                                 <TableCell align="center">{ticket.emailSolicitant}</TableCell>
-                                <TableCell align="center">{moment(ticket.dataDeschidereTicket).format('LL')}</TableCell>                   
-                                <TableCell align="center"><Button variant="outlined"  sx={{minWidth:130}}>{ticket.status.denumire}</Button></TableCell>
+                                <TableCell align="center">{moment(ticket.dataDeschidereTicket).format('LL')}</TableCell>
+                                <TableCell align="center"><Button variant="outlined" color={ticket.statusId===2 ? "warning" : ticket.statusId===3 ? "success" : ticket.statusId===4 ? "error" :"info"} sx={{ minWidth: 130 }}>{ticket.status.denumire}</Button></TableCell>
                                 <TableCell align="center">
                                     <IconButton aria-label="delete">
                                         <Delete color="error" />
@@ -62,6 +62,6 @@ export default function TicketList({ tickets }: Props) {
                 </Table>
             </TableContainer>
 
-        </Card>
+        </Card >
     )
 }
